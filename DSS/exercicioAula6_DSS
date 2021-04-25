@@ -1,0 +1,31 @@
+Responsabilidades lógicas do negócio:
+
+- Registar requisição;
+- Verificar a validade do utente;
+- Verificar a disponibilidade do livro;
+- Calcular data de entrega prevista;
+- Verificar se o utente tem multas por pagar;
+- Atualizar o livro como ocupado/Disponível;
+- Cancelar requisição;
+- Calcular valor da multa;
+- Registar entrega de um livro;
+- Verificar se a entrega está ou não dentro do prazo;
+- Registar multa;
+- Prolongar data de entrega;
+- Cancelar processo; 
+
+Métodos : 
+
++ registoRequisicao (codUtente : String, codLivro : String) : Requisição                 <<IsubRequisição>>            
++ isValido ( codUtente : String) : Boolean                                               <<IsubUtente>>
++ isDisponivel (codLivro : String) : Boolean                                             <<IsubCodigos>>
++ calculoData ( requisicao : Requisicao) : Data                                          <<IsubRequisicao>>
++ temMultas (codUtente : String ) : Boolean                                              <<IsubRequisicao>>
++ setDisponibilidade (codLivro : String) : Boolean                                       <<IsubRequisicao>>
++ cancelarRequisicao (requisicao : Requisicao) : Boolean                                 <<IsubRequisicao>>
++ calculaMulta (codUtente : String) : Float                                              <<IsubRequisicao>>
++ registoEntrega (requisicao : Requisicao) : Boolean                                     <<IsubRequisicao>>
++ isDentroPrazoEntrega (requisicao : Requisicao) : Boolean                               <<IsubRequisicao>>
++ registoMulta (codUtente : String , valor : Float ) : Boolean                           <<IsubRequisicao>>
++ prolongarEntrega (requisicao : Requisicao) : Boolean                                   <<IsubRequisicao>>
++ cancelaProcesso (requisicao : Requisicao) : Boolean                                    <<IsubRequisicao>>

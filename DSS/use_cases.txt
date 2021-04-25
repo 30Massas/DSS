@@ -1,0 +1,57 @@
+Cenário 1
+
+Use case: Chegada de máterias primas ao armazém
+Descrição: Um camião de matérias primas chega ao armazém
+Pré-condição: A zona de recepção term espaço suficiente para receber a carga
+Pos-condição: As matérias são armazeadas no seu devido sitio
+
+
+Fluxo normal:
+1 -As paletes são descarregadas na zona de recepção
+2 -É efetuado o registo de cada palete no sistema através da leitura de qr-code
+3 -O sistema atribui um robot para transporte de uma palete
+4 -O sistema identifica a matéria como não perescivel e redereciona o destino para uma zona não refrigerada onde deve ser armazenada a palete e o caminho que o robot deve seguir para lá chegar
+5 -O robot recolhe a palete atribuida e notifica o sistema.
+6 -O robot transporta a palete pelo caminho fornecido e armazena a palete.
+7 -O robot notiica o sistema do armazenamento da palete.
+
+
+Fluxo alternativo:
+4.1 - O sistema identifica a matéria como perescivel e redereciona o destino para uma zona refrigerada onde deve ser armazenada a palete e o caminho que o robot deve seguir para lá chegar
+5 -O robot recolhe a palete atribuida e notifica o sistema.
+6 -O robot transporta a palete pelo caminho fornecido e armazena a palete.
+7 -O robot notiica o sistema do armazenamento da palete.
+
+
+Fluxo de excepção:
+2.1 - o código qr é inválido por isso o registo não efetuado no sistema
+
+
+
+
+
+
+
+Cenario 2 
+
+Use case: Uma requisição recha ao armazem
+Descrição: Uma requisição chega ao armazém
+Pré-condição: As matérias primas necessárias encontram-se no armazém
+Pos-condição: As matérias primas requisitadas deixam o armazém.
+
+
+Fluxo normal:
+1 - O sistema localiza as matérias primas necessarias e verifica a pre-condição.
+2 - O sistema emite ordem aos robots para as recolheram as materias e as colocarem na zona de entregas
+3 - O robots transportam as materias sinalizando o momento em que pegam numa palete e que a deixam na zona de entrega
+4 - o sistema verifica que todas as paletes estão na zona de entrega
+5 - As materias primas são levadas
+
+
+FLuxo alternativo:
+4.1 - O sistema verifica que faltam paletes na zona de entrega
+4.2 - O sistema emite ordem aos robots para recolheram as materias em falta e as transportarem para a zona de entrega
+
+
+
+l. 
